@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('git clone') {
             steps {
+                echo 'starting git clone'
                 git 'https://github.com/divyams/copyWebPageToRemoteMachineUsingAnsibleJenkins.git'
             }
         }
@@ -11,7 +12,7 @@ pipeline {
         stage('build') {
             steps {
                 ansiblePlaybook(
-                    echo "ansible code"
+                    echo 'Starting Ansible'
                     credentialsId: '9d08a7bd-049c-4522-a46f-222c98101801',
                     disableHostKeyChecking: true,
                     installation: 'ansible',
