@@ -11,6 +11,7 @@ pipeline {
         stage('build') {
             steps {
                 ansiblePlaybook(
+                    echo "ansible code"
                     credentialsId: '9d08a7bd-049c-4522-a46f-222c98101801',
                     disableHostKeyChecking: true,
                     installation: 'ansible',
